@@ -1,24 +1,32 @@
 import axios from 'axios';
-import React from 'react';
-import { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { PackagesContext } from '../../../App';
 import useAuth from '../../../hook/useAuth';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
   const { user } = useAuth();
   const { bookId } = useParams();
-  const packages = useContext(PackagesContext);
+  const [packages, setPackages] = useState([]);
+  // get package
+  useEffect(() => {
+    fetch('https://whispering-harbor-60401.herokuapp.com/packages')
+      .then((res) => res.json())
+      .then((data) => {
+        setPackages(data);
+      });
+  }, []);
+  // find packages
   const currentPackage = [];
   for (let item of packages) {
     if (item._id === bookId) {
       currentPackage.push(item);
     }
   }
-  console.log(currentPackage);
+
+  // redirect
   const {
     register,
     formState: { errors },
@@ -46,6 +54,7 @@ const PlaceOrder = () => {
         }
       });
   };
+
   return (
     <div>
       <Container>
