@@ -83,12 +83,7 @@ const PlaceOrder = () => {
 
             <input className='package-btn' type='submit' />
           </form>
-          {/* <Form>
-            <input type='text' placeholder='Enter your address' /> <br /> <br />
-            <button onClick='placeOrder' className='package-btn'>
-              Place Order
-            </button>
-          </Form> */}
+
           <br />
         </div>
       </Container>
