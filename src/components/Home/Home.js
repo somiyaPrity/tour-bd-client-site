@@ -3,6 +3,7 @@ import Packages from './Packages/Packages';
 import AboutUs from './AboutUs/AboutUs';
 import Banner from './Banner/Banner';
 import Footer from './Footer/Footer';
+import CounterDiv from './CountUp/CounterDiv';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <AboutUs></AboutUs>
       <Packages></Packages>
+      <CounterDiv></CounterDiv>
       <Footer></Footer>
     </div>
   );

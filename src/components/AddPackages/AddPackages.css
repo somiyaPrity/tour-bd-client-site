@@ -17,3 +17,8 @@
   border-color: #156e36;
   color: #fff;
 }
+@media only screen and (max-width: 653px) {
+  .add-package form {
+    width: 200px;
+  }
+}
